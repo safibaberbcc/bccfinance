@@ -2,48 +2,36 @@
 echo Création de l'arborescence du projet...
 
 REM Création des dossiers principaux
-mkdir mon-projet
-cd mon-projet
+mkdir finance-app
+cd finance-app
 
 REM Création du dossier frontend
 mkdir frontend
 cd frontend
-mkdir public
-mkdir public\images
-echo. > public\favicon.ico
-echo. > public\index.html
-mkdir src
-mkdir src\assets
-echo. > src\assets\styles.css
-mkdir src\components
-mkdir src\pages
-mkdir src\services
-echo. > src\App.js
-echo. > src\index.js
-echo. > package.json
-echo. > README.md
-cd ..
+npx create-react-app finance-app-frontend
+cd finance-app-frontend
+npm install axios
+cd ..\..
 
 REM Création du dossier backend
 mkdir backend
 cd backend
-mkdir src
-mkdir src\controllers
-mkdir src\models
-mkdir src\routes
-mkdir src\services
-mkdir src\utils
-echo. > src\app.js
-echo. > src\server.js
-mkdir config
-echo. > package.json
-echo. > README.md
+mkdir app
+cd app
+mkdir controllers
+mkdir models
+mkdir routes
+mkdir utils
+echo. > __init__.py
+echo. > main.py
+cd ..
+echo. > requirements.txt
+echo. > .env
 cd ..
 
 REM Création des fichiers globaux
 echo. > .gitignore
 echo. > README.md
-echo. > docker-compose.yml
 
 echo Arborescence créée avec succès !
 pause
